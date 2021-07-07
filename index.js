@@ -7,8 +7,7 @@ const testPayload = []; // used for debugging, cut and paste payload
 
 main();
 
-// async function main() {
-function main() {
+async function main() {
   if (debug) console.log('WARNING! You are in debug mode');
   
   try {
@@ -48,7 +47,7 @@ function main() {
     // go check to see if work item already exists in azure devops or not
     // based on the title and tags
     console.log("Check to see if work item already exists");
-    // let workItem = await find(vm);
+    let workItem = await find(vm);
     let issue = "";
 
     // if workItem == -1 then we have an error during find
@@ -61,7 +60,7 @@ function main() {
     // if a work item was not found, go create one
     if (workItem === null) {
       console.log("No work item found, creating work item from issue");
-      // workItem = await create(vm);
+      workItem = await create(vm);
 
       // if workItem == -1 then we have an error during create
       if (workItem === -1) {
@@ -82,7 +81,7 @@ function main() {
         console.log("Warning: Missing GitHub token and unable to update issue with AB# syntax.")
       }
       
-      // issue = vm.env.ghToken != "" ? await updateIssueBody(vm, workItem) : "";
+      issue = vm.env.ghToken != "" ? await updateIssueBody(vm, workItem) : "";
 
     } else {
       console.log(`Existing work item found: ${workItem.id}`);
