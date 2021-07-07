@@ -7,7 +7,8 @@ const testPayload = []; // used for debugging, cut and paste payload
 
 main();
 
-async function main() {
+// async function main() {
+function main() {
   if (debug) console.log('WARNING! You are in debug mode');
   
   try {
