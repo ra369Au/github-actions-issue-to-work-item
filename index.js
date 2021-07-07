@@ -82,7 +82,7 @@ function main() {
         console.log("Warning: Missing GitHub token and unable to update issue with AB# syntax.")
       }
       
-      issue = vm.env.ghToken != "" ? await updateIssueBody(vm, workItem) : "";
+      // issue = vm.env.ghToken != "" ? await updateIssueBody(vm, workItem) : "";
 
     } else {
       console.log(`Existing work item found: ${workItem.id}`);
