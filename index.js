@@ -61,7 +61,7 @@ function main() {
     // if a work item was not found, go create one
     if (workItem === null) {
       console.log("No work item found, creating work item from issue");
-      workItem = await create(vm);
+      // workItem = await create(vm);
 
       // if workItem == -1 then we have an error during create
       if (workItem === -1) {
