@@ -47,7 +47,7 @@ on:
 
 jobs:
   alert:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: synced-actions/github-actions-issue-sync@main
         env:
